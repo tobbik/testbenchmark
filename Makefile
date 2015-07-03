@@ -32,7 +32,6 @@ all: $(EXE)
 %: %.o
 	$(CC) $< -o $@
 
-
 %.o: %.c
 	$(CC) $(INCS) $(CFLAGS) -c $< -o $@
 
@@ -40,10 +39,30 @@ clean:
 	-rm  $(EXE)
 
 runc:
-	./c_int && ./c_float && ./c_double
+	./c_int
+	./c_float
+	./c_double
 
 runjs:
 	node js.js
 	js24 js.js
 
-runall: runc runjs
+runluajit:
+	luajit l_local_01.lua
+	luajit l_local_02.lua
+	luajit l_global.lua
+
+runlua:
+	lua l_local_01.lua
+	lua l_local_02.lua
+	lua l_global.lua
+
+runpython:
+	python2 python.py
+	python3 python.py
+
+runphp:
+	php php.php
+	hhvm php.php
+
+runall: runc runjs runluajit runlua runphp runpython

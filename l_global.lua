@@ -13,7 +13,8 @@ for i_loop1=0,9 do
 end
 
 local i_time_end = os.clock()
-print( string.format( 'Counter: %i\n', i_counter))
-print( string.format( 'Total seconds: %.2f\n', i_time_end - i_time_start ) )
+io.write( string.format( '                     Result: %d       %0.3f seconds\n',
+	i_counter, 
+	i_time_end - i_time_start ) )
 
 os.exit( 0 )

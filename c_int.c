@@ -13,8 +13,6 @@ int main( int argc, const char * argv[] )
 	int i_loop1, i_loop2, i_loop3;
 	int i_counter = 0;
 
-	printf( "Execution for C(Integer based)-     " );
-	fflush( stdout );
 	for (i_loop1 = 0; i_loop1 < 10; i_loop1++)
 	{
 		for (i_loop2 = 0; i_loop2 < 32000; i_loop2++)
@@ -33,7 +31,7 @@ int main( int argc, const char * argv[] )
 	}
 
 	gettimeofday( &bTv, NULL );
-	printf( "Result: %d       %0.3f seconds\n", i_counter, 
+	printf( "                     Result: %d       %0.3f seconds\n", i_counter, 
 		(bTv.tv_sec - aTv.tv_sec) + (double)(bTv.tv_usec - aTv.tv_usec)/1000000.0 );
 
 	return 0;
