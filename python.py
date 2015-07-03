@@ -16,4 +16,4 @@ s_unixtime_end = time.time( )
 
 seconds = s_unixtime_end - s_unixtime_start
 
-print( "                     Result: %d       %0.3f seconds\n" % (i_counter, seconds) )
+print( "                     Result: %d       %0.3f seconds" % (i_counter, seconds) )
