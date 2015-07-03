@@ -38,7 +38,7 @@ all: $(EXE)
 clean:
 	-rm  $(EXE)
 
-runc:
+runc: $(EXE)
 	./c_int
 	./c_float
 	./c_double
@@ -66,3 +66,14 @@ runphp:
 	hhvm php.php
 
 runall: runc runjs runluajit runlua runphp runpython
+
+versions:
+	gcc -dumpversion
+	node -v
+	js24 -h | grep Version
+	luajit -v
+	lua -v
+	php -v | grep built
+	hhvm --version | grep HipHop
+	python2 -V
+	python3 -V
