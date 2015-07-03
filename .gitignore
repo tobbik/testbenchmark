@@ -1,0 +1,6 @@
+c_int
+c_float
+c_double
+*.o
+*.swp
+*.swo
