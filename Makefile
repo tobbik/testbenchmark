@@ -57,15 +57,20 @@ runlua:
 	lua l_local_02.lua
 	lua l_global.lua
 
+runphp:
+	hhvm php.php
+	php php.php
+
 runpython:
+	pypy python.py
+	pypy3 python.py
 	python2 python.py
 	python3 python.py
 
-runphp:
-	php php.php
-	hhvm php.php
+runruby:
+	ruby rb.rb
 
-runall: runc runjs runluajit runlua runphp runpython
+runall: runc runjs runluajit runlua runruby runphp runpython
 
 versions:
 	gcc -dumpversion
@@ -77,3 +82,6 @@ versions:
 	hhvm --version | grep HipHop
 	python2 -V
 	python3 -V
+	pypy -V
+	pypy3 -V
+	ruby -v
