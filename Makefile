@@ -60,6 +60,8 @@ runlua:
 runphp:
 	hhvm php.php
 	php php.php
+	hhvm php01.php
+	php php01.php
 
 runpython:
 	pypy python.py
