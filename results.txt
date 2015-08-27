@@ -1,18 +1,5 @@
 Dell XPS 15 with Archlinux on July 6th, 2015
 
-[tobias@zenit blog]$ make
-make all
-make[1]: Entering directory '/home/tobias/coding/lua/nested_loop/blog'
-gcc  -Wall -Wextra -Werror -g -O0 -std=c99 -c c_double.c -o c_double.o
-gcc c_double.o -o c_double
-rm c_double.o
-gcc  -Wall -Wextra -Werror -g -O0 -std=c99 -c c_float.c -o c_float.o
-gcc c_float.o -o c_float
-rm c_float.o
-gcc  -Wall -Wextra -Werror -g -O0 -std=c99 -c c_int.c -o c_int.o
-gcc c_int.o -o c_int
-rm c_int.o
-make[1]: Leaving directory '/home/tobias/coding/lua/nested_loop/blog'
 [tobias@zenit blog]$ make versions
 gcc -dumpversion
 5.1.0
@@ -78,4 +65,80 @@ python2 python.py
 python3 python.py
                      Result: 46       1217.423 seconds
 [tobias@zenit blog]$ 
+###############################################################
+run on 2015, August 27th
+[tobias@zenit testbenchmark]$ make versions
+gcc -dumpversion
+5.2.0
+node -v
+v0.12.7
+js24 -h | grep Version
+Version: JavaScript-C24.2.0
+luajit -v
+LuaJIT 2.0.4 -- Copyright (C) 2005-2015 Mike Pall. http://luajit.org/
+lua -v
+Lua 5.3.1  Copyright (C) 1994-2015 Lua.org, PUC-Rio
+php -v | grep built
+PHP 5.6.12 (cli) (built: Aug  6 2015 19:22:08) 
+hhvm --version | grep HipHop
+HipHop VM 3.9.0 (rel)
+python2 -V
+Python 2.7.10
+python3 -V
+Python 3.4.3
+pypy -V
+Python 2.7.9 (295ee98b6928, Jun 02 2015, 16:33:44)
+[PyPy 2.6.0 with GCC 5.1.0]
+pypy3 -V
+Python 3.2.5 (b2091e973da69152b3f928bfaabd5d2347e6df46, Nov 18 2014, 20:15:54)
+[PyPy 2.4.0 with GCC 4.9.2]
+ruby -v
+ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-linux]
+[tobias@zenit testbenchmark]$ make
+make all
+make[1]: Entering directory '/home/tobias/mygit/testbenchmark'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/tobias/mygit/testbenchmark'
+
+
+./c_int
+                     Result: 37       21.603 seconds
+./c_float
+                     Result: 37.0000  33.991 seconds
+./c_double
+                     Result: 37.0000  34.069 seconds
+node js.js
+                     Result: 37       12.781 seconds
+js24 js.js
+                     Result: 37       20.879 seconds
+luajit l_local_01.lua
+                     Result: 37       10.021 seconds
+luajit l_local_02.lua
+                     Result: 37       10.025 seconds
+luajit l_global.lua
+                     Result: 37       16.012 seconds
+lua l_local_01.lua
+                     Result: 37       179.834 seconds
+lua l_local_02.lua
+                     Result: 37       177.637 seconds
+lua l_global.lua
+                     Result: 37       518.284 seconds
+ruby rb.rb
+                     Result: 37       601.903794951 seconds
+hhvm php.php
+                     Result: 37       55 seconds
+php php.php
+                     Result: 37       396 seconds
+hhvm php01.php
+                     Result: 37       32 seconds
+php php01.php
+                     Result: 37       403 seconds
+pypy python.py
+                     Result: 37       26.476 seconds
+pypy3 python.py
+                     Result: 37       51.544 seconds
+python2 python.py
+                     Result: 37       1196.412 seconds
+python3 python.py
+                     Result: 37       1249.129 seconds
 
