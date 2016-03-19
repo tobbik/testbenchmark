@@ -1,9 +1,9 @@
 #!/usr/bin/ruby -w
 
 args = ARGV
-i_loops   = 10000
+i_loops   = 10000-1
 if args.length > 0
-	i_loops = args[ 0 ].to_i;
+	i_loops = args[ 0 ].to_i - 1;
 end
 i_counter = 0;
 

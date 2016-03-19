@@ -1,6 +1,6 @@
 local i_counter = 0
-local i_loops = 10000
-if #arg > 0 then i_loops = tonumber( arg[ 1 ] ) end
+local i_loops = 10000 -1
+if #arg > 0 then i_loops = tonumber( arg[ 1 ] ) - 1 end
 local i_time_start = os.clock( )
 
 for i_loop1=0,9 do

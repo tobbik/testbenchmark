@@ -1,0 +1,40 @@
+./c_int 10000
+                     Result: 7       2.411 seconds
+./c_float 10000
+                     Result: 7.0000  4.861 seconds
+./c_double 10000
+                     Result: 7.0000  4.876 seconds
+node js.js 10000
+                     Result: 7       5.923 seconds
+js24 js.js 10000
+                     Result: 7       42.784 seconds
+luajit l_local_01.lua 10000
+                     Result: 7       1.564 seconds
+luajit l_local_02.lua 10000
+                     Result: 7       1.556 seconds
+luajit l_global.lua 10000
+                     Result: 7       1.689 seconds
+lua l_local_01.lua 10000
+                     Result: 7       21.350 seconds
+lua l_local_02.lua 10000
+                     Result: 7       21.332 seconds
+lua l_global.lua 10000
+                     Result: 7       53.422 seconds
+ruby rb.rb 10000
+                     Result: 7       82.350348235 seconds
+hhvm php.php 10000
+                     Result: 7       10 seconds
+php php.php 10000
+                     Result: 7       20 seconds
+hhvm php01.php 10000
+                     Result: 7       8 seconds
+php php01.php 10000
+                     Result: 7       24 seconds
+pypy python.py 10000
+                     Result: 7       2.998 seconds
+pypy3 python.py 10000
+                     Result: 7       7.374 seconds
+python2 python.py 10000
+                     Result: 7       149.457 seconds
+python3 python.py 10000
+                     Result: 7       161.449 seconds
