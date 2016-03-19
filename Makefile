@@ -4,6 +4,7 @@
 CC=gcc
 LD=gcc
 CFLAGS=-Wall -Wextra -Werror -g -O0 -std=c99
+ILOOPS=5000
 
 EXE=c_double c_float c_int
 
@@ -39,38 +40,38 @@ clean:
 	-rm  $(EXE)
 
 runc: $(EXE)
-	./c_int
-	./c_float
-	./c_double
+	./c_int $(ILOOPS)
+	./c_float $(ILOOPS)
+	./c_double $(ILOOPS)
 
 runjs:
-	node js.js
-	js24 js.js
+	node js.js $(ILOOPS)
+	js24 js.js $(ILOOPS)
 
 runluajit:
-	luajit l_local_01.lua
-	luajit l_local_02.lua
-	luajit l_global.lua
+	luajit l_local_01.lua $(ILOOPS)
+	luajit l_local_02.lua $(ILOOPS)
+	luajit l_global.lua $(ILOOPS)
 
 runlua:
-	lua l_local_01.lua
-	lua l_local_02.lua
-	lua l_global.lua
+	lua l_local_01.lua $(ILOOPS)
+	lua l_local_02.lua $(ILOOPS)
+	lua l_global.lua $(ILOOPS)
 
 runphp:
-	hhvm php.php
-	php php.php
-	hhvm php01.php
-	php php01.php
+	hhvm php.php $(ILOOPS)
+	php php.php $(ILOOPS)
+	hhvm php01.php $(ILOOPS)
+	php php01.php $(ILOOPS)
 
 runpython:
-	pypy python.py
-	pypy3 python.py
-	python2 python.py
-	python3 python.py
+	pypy python.py $(ILOOPS)
+	pypy3 python.py $(ILOOPS)
+	python2 python.py $(ILOOPS)
+	python3 python.py $(ILOOPS)
 
 runruby:
-	ruby rb.rb
+	ruby rb.rb $(ILOOPS)
 
 runall: runc runjs runluajit runlua runruby runphp runpython
 
